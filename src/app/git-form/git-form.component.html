@@ -1,1 +1,6 @@
-<p>git-form works!</p>
+<form action="" class="search-form">
+	<div class="form-group">
+		<input type="text" class="form-control" placeholder="Search git users with username" [(ngModel)]="username" name="username" (keyup)="findProfile()">
+	</div>
+</form>
+
