@@ -7,17 +7,17 @@ import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GitFormComponent } from './git-form/git-form.component';
-import { ProfileComponent } from './profile/profile.component';
+// import { ProfileComponent } from './profile/profile.component';
 import { CountDatePipe } from './count-date.pipe';
-import { SearchComponent } from './search/search.component';
+// import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GitFormComponent,
-    ProfileComponent,
+    // ProfileComponent,
     CountDatePipe,
-    SearchComponent
+    // SearchComponent
   ],
   imports: [
     BrowserModule,

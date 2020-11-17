@@ -1,8 +1,8 @@
 <div class="row mt100" *ngIf="showInput">
 	<div class="col-md-2"></div>
 	<div class="col-md-8 git-form">
-		<!-- <h1 class="heading">Github Search</h1> -->
-		<img class="mb15" src="./assets/images/logo.png">
+		<h1 class="heading">Github Search</h1>
+		<!-- <img class="mb15" src="./assets/images/logo.png"> -->
 		<form (ngSubmit)='submitUsername()' #gitForm='ngForm' name="gitForm">
 			<div class="row">
 				<div class="col-md-3"></div>
@@ -16,6 +16,6 @@
 	</div>
 	<div class="col-md-2"></div>	
 </div>
-<app-git-search-results *ngIf="showData" (toggleBack)="showUserInput($event)"></app-git-search-results>
+<app-search *ngIf="showData" (toggleBack)="showUserInput($event)"></app-search>
 
 

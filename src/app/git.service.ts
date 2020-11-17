@@ -18,7 +18,7 @@ export class GitService {
 
   }
 getUserData(username: string){
-  this.repoData.length = 0;
+  // this.userData.length = 0;
 
 
   interface ApiResponse{
@@ -56,7 +56,7 @@ this.http.get<any>("https://api.github.com/users/" + username + "/repos").toProm
   for(var i=0; i<response.length; i++)
   {
     this.newUserData = new Repositories(response[i].name,response[i].full_name,response[i].description,response[i].updated_at,response[i].html_url,response[i].clone_url,response[i].language,response[i].created_at);
-    this.repoData.push(this.newUserData);
+    // this.repoData.push(this.newUserData);
   }
 
   resolve()  
