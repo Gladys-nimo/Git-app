@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GitFormComponent } from './git-form/git-form.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CountDatePipe } from './count-date.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     GitFormComponent,
-    ProfileComponent
+    ProfileComponent,
+    CountDatePipe
   ],
   imports: [
     BrowserModule,

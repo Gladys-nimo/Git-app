@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  profile:any[];
+  repos: any[];
+  username:string;
 
   constructor() { }
-
+  
   ngOnInit(): void {
   }
 
