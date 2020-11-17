@@ -9,8 +9,8 @@ export class GitService {
   user:User;
   repositories:Repositories;
   newUserData :any = [];
-  showInput:boolean;
-  showData:boolean;
+  // showInput:boolean;
+  // showData:boolean;
 
   constructor(private http: HttpClient) { 
     this.user = new User("",0,"","",new Date(),new Date(),"");
