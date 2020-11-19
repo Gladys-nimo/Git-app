@@ -10,6 +10,7 @@ import { GitFormComponent } from './git-form/git-form.component';
 // import { ProfileComponent } from './profile/profile.component';
 import { CountDatePipe } from './count-date.pipe';
 import { AboutComponent } from './about/about.component';
+import { HighlightDirective } from './highlight.directive';
 // import { SearchComponent } from './search/search.component';
 
 @NgModule({
@@ -19,6 +20,7 @@ import { AboutComponent } from './about/about.component';
     // ProfileComponent,
     CountDatePipe,
     AboutComponent,
+    HighlightDirective,
     // SearchComponent
   ],
   imports: [
