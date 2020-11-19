@@ -11,6 +11,7 @@ import { GitFormComponent } from './git-form/git-form.component';
 import { CountDatePipe } from './count-date.pipe';
 import { AboutComponent } from './about/about.component';
 import { HighlightDirective } from './highlight.directive';
+import { NavbarComponent } from './navbar/navbar.component';
 // import { SearchComponent } from './search/search.component';
 
 @NgModule({
@@ -21,6 +22,7 @@ import { HighlightDirective } from './highlight.directive';
     CountDatePipe,
     AboutComponent,
     HighlightDirective,
+    NavbarComponent,
     // SearchComponent
   ],
   imports: [
