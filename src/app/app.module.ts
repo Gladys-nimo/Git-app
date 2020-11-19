@@ -12,6 +12,7 @@ import { CountDatePipe } from './count-date.pipe';
 import { AboutComponent } from './about/about.component';
 import { HighlightDirective } from './highlight.directive';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 // import { SearchComponent } from './search/search.component';
 
 @NgModule({
@@ -23,6 +24,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     AboutComponent,
     HighlightDirective,
     NavbarComponent,
+    NotFoundComponent,
     // SearchComponent
   ],
   imports: [
