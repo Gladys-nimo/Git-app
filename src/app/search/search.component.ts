@@ -22,12 +22,12 @@ hideInput:boolean;
     this.gitService = gitService;
   }
 
-  // @Output() toggleBack = new EventEmitter();
+  @Output() toggleBack = new EventEmitter();
 
-  // goBack(){
-  //   this.hideInput = true;
-  //   this.toggleBack.emit(this.hideInput);
-  // }
+  goBack(){
+    this.hideInput = true;
+    this.toggleBack.emit(this.hideInput);
+  }
 
   ngOnInit() {
     this.user = this.gitService.user;
