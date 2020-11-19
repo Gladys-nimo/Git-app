@@ -15,7 +15,7 @@ export class GitService {
 
   constructor(private http: HttpClient) { 
     this.user = new User("",0,"","",new Date(),new Date(),"");
-    this.repositories = new Repositories("","","",new Date(),"","","",new Date()); 		
+    this.repositories = new Repositories("","","",new Date(),"","","",new Date());		
 
   }
 getUserData(username: string){
