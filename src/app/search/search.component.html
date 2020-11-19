@@ -1,16 +1,83 @@
 <div>
     <app-git-form (searchEmmiter)='getSearchUser($event)'></app-git-form>
-    <div *ngFor="let user of user">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-<p>{{user.login}}</p>
-<p>{{user.name}}</p>
-<img src="{{user.avatar_url}}" alt="">
-<a href=""></a>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="jumbotron joker">
+                <div *ngFor='let detail of user'>
+                    <div class="card">
+                        <a href="#">
+                            <img src="{{detail.avatar_url}}" alt="" class="img-circle person">
+                        </a>
+                        <div class="cardp">
+                            <div class="jumbotron">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{detail.name}}</h5>
+                                    <p class="card-text">{{detail.login}}</p>
+                                    <p class="card-text"><i class="fa fa-address-book" aria-hidden="true" *ngIf='detail.bio'></i> {{detail.bio}}</p>
+                                    <hr>
+                                    <button class="btn btn-secondary"> Follow </button>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <p class="card-text"><i class="fa fa-user-plus" aria-hidden="true"></i> {{detail.followers}} <small>FOLLOWERS</small>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p class="card-text">{{detail.following}} <small>FOLLOWING</small> </p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p class="card-text">{{detail.stargazers_count}} <i class="fa fa-star" aria-hidden="true"></i>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <p class="card-text"><i class="fa fa-building" aria-hidden="true" *ngIf='detail.company'></i> {{detail.company}}</p>
+                                    <p class="card-text"><i class="fa fa-map-marker" aria-hidden="true" *ngIf='detail.location'></i> {{detail.location}}</p>
+                                    <p class="card-text"><i class="fa fa-twitter" aria-hidden="true" *ngIf='detail.twitter_username'></i> {{detail.twitter_username}}</p>
+                                    <p class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i> Joined on: {{detail.created_at|date}}</p>
+                                    <br>
+                                    <a href="{{detail.html_url}}" target="_blank" class="btn btn-outline-warning"><small>GITHUB</small></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h1>REPOSITORIES.</h1>
+            <hr>
+            <div class="card-repo">
+                <div *ngFor='let repo of repo '>
+                    <div class="card text-center" >
+                        <div class="card-header" appHighlight>
+                            <a href="{{repo.html_url}}">
+                                <h5 class="card-title">{{repo.name}}</h5>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{repo.description}}</p>
+                            <p class="card-text"><i class="fa fa-file-code-o" aria-hidden="true" *ngIf='repo.language'></i> {{repo.language}}</p>
+                            <p class="card-text">CREATED: {{repo.created_at|dateAgo}}</p>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <a href="#" class="btn btn-outline-secondary"><i class="fa fa-eye" aria-hidden="true"></i> {{repo.watchers}}</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-outline-secondary"><i class="fa fa-code-fork" aria-hidden="true"></i> {{repo.forks_count}}</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="{{repo.html_url}}"> <button class="btn btn-outline-secondary">CLICK TO VIEW</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+   
 </div>
 
 
@@ -38,34 +105,4 @@
 
 
 
-
-<!-- <div class="row">
-<div class="col-md-1">
-<div class="col-md-4 ">
-    <h4>{{user.login}]</h4>
-    <img src="{{gitService.user.avatar_url}}" alt="">
-    <p class="bio">{{user.bio}}</p>
-    <p class="stat">Date Joined: <strong>{{user.created|date}}</strong></p>
-    <p class="stat">Last Update: <strong>{{user.updated_at|date}}</strong></p>
-    <p class="stat">Number of Repos: <strong>{{user.public_repos}}</strong></p>
-    <p class="stat"><i class="fa fa-github-alt" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;<a href="{{user.html_url}}" target="_blank">View Github Profile</a></p>
-</div>
-<div class="panel-body repo-detail">                    
-    <div class="git-results">                        
-        <div class="media mb15" *ngFor='let repoDetail of repoDetails'>
-            <div class="media-body">
-              <h4 class="filename text-success"><a href="{{repoDetail.html_url}}" target="_blank">{{repoDetail.name}}</a></h4>
-              <small class="last-update">Created At: <strong>{{repoDetail.created|date}}</strong>
-                <!-- &nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-clone" aria-hidden="true"></i>&nbsp;&nbsp;Clone:&nbsp;&nbsp; -->
-<!-- <strong appCloneHighlighter>{{repoDetail.clone_url}}</strong> -->
-              <!-- </small>
-               <p class="description">{{repoDetail.description}}</p> 
-              <small class="last-update">Language: <strong>{{repoDetail.language}}</strong>&nbsp;&nbsp;|&nbsp;&nbsp;Last Updated: <strong>{{repoDetail.updated_at|daysCount}} Days Ago</strong></small>
-          </div>
-      </div>                       
-  </div>                  
-</div>
-
-</div>
-</div>  --> 
 

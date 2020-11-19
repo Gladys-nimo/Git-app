@@ -13,6 +13,7 @@ import { HighlightDirective } from './highlight.directive';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SearchComponent } from './search/search.component';
+import { DateAgoPipe } from './pipes/date-ago.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SearchComponent } from './search/search.component';
     HighlightDirective,
     NavbarComponent,
     NotFoundComponent,
-    SearchComponent
+    SearchComponent,
+    DateAgoPipe
   ],
   imports: [
     BrowserModule,
