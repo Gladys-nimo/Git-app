@@ -7,7 +7,8 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: 'form', component:GitFormComponent},
   { path: 'about', component:AboutComponent},
-  { path:'**', component:NotFoundComponent}
+  { path:'**', component:NotFoundComponent},
+  { path: '', redirectTo:"/git", pathMatch:"full"},
 ];
 
 @NgModule({
