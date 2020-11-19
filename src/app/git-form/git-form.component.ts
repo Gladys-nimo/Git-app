@@ -1,8 +1,4 @@
-import { User } from './../user';
-import { GitService } from './../git.service';
-import { Component, OnInit, Output } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; // Allows us to use HttpClient in our application
-import { NgForm } from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
  
 
 @Component({
@@ -12,32 +8,31 @@ import { NgForm } from '@angular/forms';
 })
 export class GitFormComponent implements OnInit {
 
-  user:User;
-  username: string;
-  gitService:GitService;
-  public showInput = true;
-  public showData = false;
+searchTerm:string  
+@Output() searchEmmiter= new EventEmitter<any>();
 
-  submitUsername() {
-    this.gitService.getUserData(this.username);
-    this.showInput = false;
-    this.showData = true;
+  constructor() {
   }
-
-  showUserInput(hideInput){
-  this.showInput = hideInput;
-  this.showData = false;
+emitUser(){
+  this.searchEmmiter.emit(this.searchTerm);
 }
-
-
-
-
-
-  constructor(gitService:GitService) {
-    this.gitService = gitService;
-   }
-
   ngOnInit(): void {
   }
 
 }
+// user:User;
+//   username: string;
+//   gitService:GitService;
+//   public showInput = true;
+//   public showData = false;
+
+//   submitUsername() {
+//     this.gitService.getUserData(this.username);
+//     this.showInput = false;
+//     this.showData = true;
+//   }
+
+//   showUserInput(hideInput){
+//   this.showInput = hideInput;
+//   this.showData = false;
+// }

@@ -1,4 +1,45 @@
-<div class="row">
+<div>
+    <app-git-form (searchEmmiter)='getSearchUser($event)'></app-git-form>
+    <div *ngFor="let user of user">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+<p>{{user.login}}</p>
+<p>{{user.name}}</p>
+<img src="{{user.avatar_url}}" alt="">
+<a href=""></a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="row">
 <div class="col-md-1">
 <div class="col-md-4 ">
     <h4>{{user.login}]</h4>
@@ -17,7 +58,7 @@
               <small class="last-update">Created At: <strong>{{repoDetail.created|date}}</strong>
                 <!-- &nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-clone" aria-hidden="true"></i>&nbsp;&nbsp;Clone:&nbsp;&nbsp; -->
 <!-- <strong appCloneHighlighter>{{repoDetail.clone_url}}</strong> -->
-              </small>
+              <!-- </small>
                <p class="description">{{repoDetail.description}}</p> 
               <small class="last-update">Language: <strong>{{repoDetail.language}}</strong>&nbsp;&nbsp;|&nbsp;&nbsp;Last Updated: <strong>{{repoDetail.updated_at|daysCount}} Days Ago</strong></small>
           </div>
@@ -26,5 +67,5 @@
 </div>
 
 </div>
-</div> 
+</div>  --> 
 

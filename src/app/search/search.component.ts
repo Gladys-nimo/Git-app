@@ -1,5 +1,6 @@
+import { RepoService } from './../repo.service';
+import { Repositories } from './../repositories';
 import { User } from './../user';
-import { NgForm } from '@angular/forms';
 import { GitService } from './../git.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
@@ -11,27 +12,67 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 
 export class SearchComponent implements OnInit {
-   
-user:User;
-repoDetails = [];
-gitService:GitService;
-hideInput:boolean;
+  user:User[];
+  repo:Repositories[];
+  constructor( public gitService:GitService, public gitServiceRepo:RepoService) { 
+   }
 
-
-  constructor(gitService:GitService) { 
-    this.gitService = gitService;
-  }
-
-  @Output() toggleBack = new EventEmitter();
-
-  goBack(){
-    this.hideInput = true;
-    this.toggleBack.emit(this.hideInput);
-  }
-
-  ngOnInit() {
-    this.user = this.gitService.user;
-    this.repoDetails = this.gitService.repoData
-  }
-
+getSearchUser(searchTerm){
+  this.gitService.searchUser(searchTerm).then(
+    (success)=>{this.user=this.gitService.user;},
+    (error)=>{console.log(error);
+    }
+  );
+  this.gitServiceRepo.getRepo(searchTerm).subscribe(
+    (success)=>{
+      this.repo=success
+      return(this.repo)
+    }
+  )
 }
+
+
+
+ngOnInit() {
+this.getSearchUser("Gladys-nimo")
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+// user:User;
+// repoDetails = [];
+// gitService:GitService;
+// hideInput:boolean;
+
+
+//   
+
+//   @Output() toggleBack = new EventEmitter();
+
+//   goBack(){
+//     this.hideInput = true;
+//     this.toggleBack.emit(this.hideInput);
+//   }
+
+//   
+
+// }
